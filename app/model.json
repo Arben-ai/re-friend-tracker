@@ -29,13 +29,13 @@
               "required": true
             },
             {
-                "id": "group",
-                "type": "autocomplete",
-                "name": "Group",
-                "url": "/group",
-                "form": "GroupForm",
-                "width": 2
-                },
+              "id": "group",
+              "type": "autocomplete",
+              "name": "Group",
+              "url": "/group",
+              "form": "GroupForm",
+              "width": 2
+            },
             {
               "id": "location",
               "type": "autocomplete",
@@ -71,32 +71,7 @@
               "name": "Ok"
             }
           ]
-        },{
-            "id": "GroupForm",
-            "title": "Group",
-            "url": "/group",
-            "formFieldList": [
-              {
-                "id": "name",
-                "type": "text",
-                "name": "GroupName",
-                "width": 2,
-                "required": true
-              },
-              {
-                "type": "deleteButton",
-                "name": "Delete"
-              },
-              {
-                "type": "cancelButton",
-                "name": "Cancel"
-              },
-              {
-                "type": "okButton",
-                "name": "Ok"
-              }
-            ]
-          },
+        },
         {
           "id": "LocationForm",
           "title": "Location",
@@ -228,8 +203,42 @@
               "color": "blue",
               "search": true,
               "url": "/friend",
+              "page": "frienddetailpage"
+            }
+          ]
+        },
+        {
+          "id": "frienddetailpage",
+          "elementList": [
+            {
+              "type": "backbutton"
+            },
+            {
+              "type": "button",
+              "name": "Edit Friend",
+              "icon": "fa-user",
+              "color": "blue",
               "form": {
                 "form": "FriendForm"
+              }
+            },
+            {
+              "type": "button",
+              "name": "Add Activity",
+              "icon": "fa-calendar",
+              "color": "green",
+              "form": {
+                "form": "AddActivityForm"
+              }
+            },
+            {
+              "type": "list",
+              "icon": "fa-calendar",
+              "color": "orange",
+              "search": true,
+              "url": "/friend/:friendKey/activity",
+              "form": {
+                "form": "AddActivityForm"
               }
             }
           ]
@@ -278,19 +287,9 @@
               }
             },
             {
-                "type": "list",
-                "icon": "fa-weixin",
-                "color": "wisteria",
-                "search": true,
-                "url": "/group",
-                "form": {
-                  "form": "GroupForm"
-                }
-              },
-            {
               "type": "list",
               "icon": "fa-weixin",
-              "color": "blue",
+              "color": "wisteria",
               "search": true,
               "url": "/group",
               "form": {
@@ -302,4 +301,3 @@
       ]
     }
   }
-  
